@@ -11,8 +11,11 @@ import DialogTitle from '@mui/material/DialogTitle';
 import CircularProgress from "@mui/material/CircularProgress";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { db } from "@/lib/firebase.setting";
+import { db,storage } from "@/lib/firebase.setting";
+import { db,storage } from "@/lib/firebase"
 import { collection,addDoc } from "firebase/firestore";
+import { getDownloadURL, uploadString } from "firebase/storage";
+import { ref,uploadString,getDownloadURL } from "";
 
 const rules = yup.object().shape({
     title:yup.string().required().min(3),
@@ -37,7 +40,7 @@ export default function Create () {
 
     // create records in firestore -------
     const createRecords = async () => {
-        await addDoc(collection(db,"assets"),{
+        const docref = await addDoc(collection(db,"assets"),{
             title: values.title,
             wallet:values.wallet,
             price:values.price,
@@ -46,10 +49,16 @@ export default function Create () {
             notes:values.notes,
             timestamp:new Date().getTime(),
             createdBy:null,
-        }).then(() => {
-            handleClickOpen();
-            setOpenProgress(false);
-        }).catch(err => console.error(err))
+        })
+
+           const imageRef = ref(storage,`assets/${docRef.id}/images`);
+
+           if (selectedFile) {
+            await uploadString(imageRef,selectedFile,"data-url")
+            .then(async () => {
+                const downloadURL = await getDownloadURL ()
+            })
+           }
     }
 
     const { values,handleBlur,handleSubmit,touched,errors,handleChange} = useFormik({

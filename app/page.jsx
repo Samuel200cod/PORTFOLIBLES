@@ -1,8 +1,11 @@
+
+
 import Link from "next/link";
 import { GrMoney } from "react-icons/gr";
 import { TbTrack } from "react-icons/tb";
-import { GiProfit } from "react-icons/gi";
+import { GiOpenFolder, GiProfit } from "react-icons/gi";
 import { FaNoteSticky } from "react-icons/fa6";
+import { Dialog } from "@mui/material";
 
 export default function Home() {
   return (
@@ -19,19 +22,20 @@ export default function Home() {
         <article className="row-span-4 grid md:grid-cols-3 gap-4">
           <ul className="flex flex-col gap-4 border border-[#A91D3A] rounded-lg p-4">
             <li className="flex items-center gap-2">
-              <GrMoney className="text-[#A91D3A] text-2xl md:text-4xl"/>
+              <GrMoney className="text-[#A91D3A] text-2xl md:text-4xl" />
+          <Link className="border-b-2 border-[#31304D] text-[#31304D] py-3" href="">Sign in</Link>
               <span className="text-[#31304D] text-2xl">Yield Potential</span>
             </li>
             <li className="flex items-center gap-2">
-              <TbTrack className="text-[#A91D3A] text-2xl md:text-4xl"/>
+              <TbTrack className="text-[#A91D3A] text-2xl md:text-4xl" />
               <span className="text-[#31304D] text-2xl">Track Investments</span>
             </li>
             <li className="flex items-center gap-2">
-              <GiProfit className="text-[#A91D3A] text-2xl md:text-4xl"/>
+              <GiProfit className="text-[#A91D3A] text-2xl md:text-4xl" />
               <span className="text-[#31304D] text-2xl">Profit Calculator</span>
             </li>
             <li className="flex items-center gap-2">
-              <FaNoteSticky className="text-[#A91D3A] text-2xl md:text-4xl"/>
+              <FaNoteSticky className="text-[#A91D3A] text-2xl md:text-4xl" />
               <span className="text-[#31304D] text-2xl">Keep Notes</span>
             </li>
           </ul>
@@ -48,5 +52,6 @@ export default function Home() {
         </article>
       </section>
     </main>
-  );
+    
+  )
 }
