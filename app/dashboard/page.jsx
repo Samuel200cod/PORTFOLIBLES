@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { CiCirclePlus } from "react-icons/ci";
 import { BiCabinet } from "react-icons/bi";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -11,6 +13,7 @@ import { AssetTab } from "../components/AssetTab";
 
 export default function Dashboard() {
     const [assets, setAssets] = useState([]);
+    const {data:sessiion} = useSession();
 
     useEffect(() => {
         const getAssetsData = async () => {

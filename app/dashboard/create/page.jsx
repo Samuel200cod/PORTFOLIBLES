@@ -48,7 +48,7 @@ export default function Create () {
             quantity:values.quantity,
             notes:values.notes,
             timestamp:new Date().getTime(),
-            createdBy:null,
+            createdBy:session.user.email,
         })
 
            const imageRef = ref(storage,`assets/${docRef.id}/images`);
