@@ -15,7 +15,10 @@ export default function Auth() {
                 <h1 className="text-xl">Whether you are a new or existing user,sign in to continue your account</h1>
                 <form
                 action={async () => {
-                    await signIn("gooogle")
+                    await signIn("gooogle",{
+                        redirect:false,
+                        callbackUrl:"/dashboard"
+                    })
                 }}
                 className="flex flex cols gap-3">
                     <button 
