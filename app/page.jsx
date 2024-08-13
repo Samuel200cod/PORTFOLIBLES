@@ -10,7 +10,8 @@ import { Dialog } from "@mui/material";
 export default function Home() {
   return (
     <main className="px-3 md:px-12 lg:px-16 py-12 bg-gradient-to-b from-[#F0ECE5] via-white to-[#B6BBC4]">
-      <section className="min:h-screen md:h-screen flex flex-col justify-between gap-16 md:gap-0">
+      <section className="min:h-scree
+       md:h-screen flex flex-col justify-between gap-16 md:gap-0">
         <div className="row-span-5 flex justify-center items-center">
           <blockquote className="w-full md:w-[480px] lg:w-[720px]">
             <h1 className="text-5xl md:text-6xl text-[#31304D] text-center font-bold">
@@ -23,7 +24,7 @@ export default function Home() {
           <ul className="flex flex-col gap-4 border border-[#A91D3A] rounded-lg p-4">
             <li className="flex items-center gap-2">
               <GrMoney className="text-[#A91D3A] text-2xl md:text-4xl" />
-          <Link className="border-b-2 border-[#31304D] text-[#31304D] py-3" href="">Sign in</Link>
+              <Link className="border-b-2 border-[#31304D] text-[#31304D] py-3" href="">Sign in</Link>
               <span className="text-[#31304D] text-2xl">Yield Potential</span>
             </li>
             <li className="flex items-center gap-2">
@@ -52,6 +53,6 @@ export default function Home() {
         </article>
       </section>
     </main>
-    
+
   )
 }

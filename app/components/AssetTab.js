@@ -3,25 +3,27 @@ import Image from "next/image";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { CiWallet } from "react-icons/ci";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
-import { db,storage } from "@/lib/firebase";
+import { db, storage } from "@/lib/firebase";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { TextField } from "@mui/material";
+import { object } from "yup";
 import Dialog, { DialogActions } from "@mui/material";
 import Button from "@mui/material";
 import dialogAction from "@mui/material";
 import DialogContentText from "@mui/material";
 import DialogTitle from "@mui/material";
 import CircularProgress from "@mui/material";
-import { Formik } from "formik";
+import { Formik, yup } from "formik";
 
-const rules = yup.object().shape({
-    title: yup.string().required().min(3),
-    wallet: yup.string().required().min(26).max(62),
-    price: yup.number().required(),
-    ticker: yup.string().required().min(3),
-    notes: yup.string(),
-    quantity: yup.number().required().min(1),
-});
+// const rules = 
+//     yup().object().shape({
+//     title: yup.string().required().min(3),
+//     wallet: yup.string().required().min(26).max(62),
+//     price: yup.number().required(),
+//     ticker: yup.string().required().min(3),
+//     notes: yup.string(),
+//     quantity: yup.number().required().min(1),
+// });
 export function AssetTab({ id, title, qty, tick, holdWallet, price, notes, img }) {
     const [open, setOpen] = React.useState(false);
     const [OpenProgress, setOpenProgress] = React.usestate(false)
@@ -77,13 +79,13 @@ export function AssetTab({ id, title, qty, tick, holdWallet, price, notes, img }
         <div className="min-h-[54px] flex justify-between items-center bg-[#161A30] rounded-lg p-3">
             <div className="flex items-center gap-1">
                 <blockquote>
-                <Image
-                    width={36}
-                    height={36}
-                    src="/placeholder.jpg"
-                    alt="asset image"
-                    className="rounded-lg" />
-                <span className="text-[#F0ECE5] text-xs uppercase">{title}</span>
+                    <Image
+                        width={36}
+                        height={36}
+                        src="/placeholder.jpg"
+                        alt="asset image"
+                        className="rounded-lg" />
+                    <span className="text-[#F0ECE5] text-xs uppercase">{title}</span>
                 </blockquote>
             </div>
 

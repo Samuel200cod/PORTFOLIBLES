@@ -11,11 +11,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import CircularProgress from "@mui/material/CircularProgress";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { db,storage } from "@/lib/firebase.setting";
-import { db,storage } from "@/lib/firebase"
+import { db,storage } from "@/lib/firebase";
 import { collection,addDoc } from "firebase/firestore";
 import { getDownloadURL, uploadString } from "firebase/storage";
-import { ref,uploadString,getDownloadURL } from "";
+
 
 const rules = yup.object().shape({
     title:yup.string().required().min(3),

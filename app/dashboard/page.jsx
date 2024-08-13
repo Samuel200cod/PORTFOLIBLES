@@ -7,13 +7,13 @@ import { CiCirclePlus } from "react-icons/ci";
 import { BiCabinet } from "react-icons/bi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUserCircle } from "react-icons/fa";
-import { db,storage } from "@/lib/firebase";
+import { db, storage } from "@/lib/firebase";
 import { getDocs, collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { AssetTab } from "../components/AssetTab";
 
 export default function Dashboard() {
     const [assets, setAssets] = useState([]);
-    const {data:sessiion} = useSession();
+    const { data: sessiion } = useSession();
 
     useEffect(() => {
         const getAssetsData = async () => {
@@ -41,10 +41,12 @@ export default function Dashboard() {
                     <CiCirclePlus className={styles.iconStyle} />
                     <span className={styles.btnText}>Create</span>
                 </Link>
-                <button className={styles.btn}>
-                    <BiCabinet className={styles.iconStyle} />
-                    <span className={styles.btnText}>Assets</span>
-                </button>
+                {/* <Link href="/components/Assets"> */}
+                    <button className={styles.btn}>
+                        <BiCabinet className={styles.iconStyle} />
+                        <span className={styles.btnText} >Assets</span>
+                    </button>
+                {/* </Link> */}
                 <button className={styles.btn}>
                     <IoSettingsOutline className={styles.iconStyle} />
                     <span className={styles.btnText}>Manage</span>
@@ -71,8 +73,8 @@ export default function Dashboard() {
                                 tick={item.data.ticker}
                                 price={item.data.price}
                                 img={item.data}
-                                key={item.id} 
-                                />
+                                key={item.id}
+                            />
                         )
                     })}
                 </div>

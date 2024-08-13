@@ -12,7 +12,7 @@ export function Nav() {
       </Link>
 
       {
-        session
+        useSession
           ?
           <Link
             className="border-b-2 border-[#31304D] text-[#31304D] py-3"
