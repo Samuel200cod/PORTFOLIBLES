@@ -77,10 +77,10 @@ export default function Create () {
             <form onSubmit={handleSubmit} className="w-full md:w-[380px] flex flex-col gap-4 border border-gray-300 p-4">
                 <div>
                     <TextField 
-                    id="title" 
-                    label="title" 
+                    id="Game name" 
+                    label="Game name" 
                     variant="standard" 
-                    placeholder="title"
+                    placeholder="Game name"
                     className="w-full"
                     value={values.title}
                     onChange={handleChange}
@@ -89,10 +89,10 @@ export default function Create () {
                 </div>
                 <div>
                     <TextField 
-                    id="wallet" 
-                    label="wallet" 
+                    id="money/pass" 
+                    label="money/pass" 
                     variant="standard" 
-                    placeholder="wallet"
+                    placeholder="money/pass"
                     className="w-full"
                     value={values.wallet}
                     onChange={handleChange}
@@ -114,10 +114,10 @@ export default function Create () {
                 </div>
                 <div>
                     <TextField 
-                    id="ticker" 
-                    label="ticker" 
+                    id="player id" 
+                    label="player id" 
                     variant="standard" 
-                    placeholder="ticker"
+                    placeholder="player id"
                     className="w-full"
                     value={values.ticker}
                     onChange={handleChange}
@@ -141,10 +141,10 @@ export default function Create () {
                     <TextField 
                     multiline={true}
                     rows={3}
-                    id="notes" 
-                    label="notes" 
+                    id="feedback" 
+                    label="feedback" 
                     variant="standard" 
-                    placeholder="notes"
+                    placeholder="feedback"
                     className="w-full"
                     value={values.notes}
                     onChange={handleChange}
