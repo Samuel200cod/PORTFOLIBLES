@@ -15,7 +15,7 @@ export default function Home() {
         <div className="row-span-5 flex justify-center items-center">
           <blockquote className="w-full md:w-[480px] lg:w-[720px]">
             <h1 className="text-5xl md:text-6xl text-[#31304D] text-center font-bold">
-              <span className="text-[#A91D3A]">REXXYJ</span>Gaming currency market for all variety of mobile games like CODM,PUBG,FF,BLOODSTRIKE ETC.
+              <span className="text-[#A91D3A]">REXXYJ</span>Gaming currency market for all variety of mobile games like  <span className="text-[#A91D3A]">CODM,PUBG,FF,BLOODSTRIKE ETC.</span> 
             </h1>
           </blockquote>
         </div>
